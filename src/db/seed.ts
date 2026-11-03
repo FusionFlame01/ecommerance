@@ -8,7 +8,7 @@ const sampleProducts = [
     description:
       "The radiance lives on in the b-ball original. Crisp leather, bold details and the perfect amount of flash make the Air Force 1 '07 an everyday icon.",
     price: "110.00",
-    imageUrl: "https://placehold.co/600x600/png?text=Air+Force+1",
+    imageUrl: "/shoes/shoe-1.jpg",
     brand: "Nike",
     category: "Lifestyle",
   },
@@ -17,7 +17,7 @@ const sampleProducts = [
     description:
       "Nothing as fly, nothing as comfortable, nothing as proven. The Air Max 90 stays true to its OG running roots with the iconic Waffle sole, stitched overlays and visible Max Air cushioning.",
     price: "130.00",
-    imageUrl: "https://placehold.co/600x600/png?text=Air+Max+90",
+    imageUrl: "/shoes/shoe-2.webp",
     brand: "Nike",
     category: "Lifestyle",
   },
@@ -26,7 +26,7 @@ const sampleProducts = [
     description:
       "Created for the hardwood but taken to the streets, this '80s basketball icon returns with classic details and throwback hoops flair. Padded, low-cut collar for all-day comfort.",
     price: "115.00",
-    imageUrl: "https://placehold.co/600x600/png?text=Dunk+Low",
+    imageUrl: "/shoes/shoe-3.webp",
     brand: "Nike",
     category: "Lifestyle",
   },
@@ -35,7 +35,7 @@ const sampleProducts = [
     description:
       "Responsive cushioning in the Pegasus provides an energized ride for everyday road running. ReactX foam and Air Zoom units deliver a springy feel mile after mile.",
     price: "140.00",
-    imageUrl: "https://placehold.co/600x600/png?text=Pegasus+41",
+    imageUrl: "/shoes/shoe-4.webp",
     brand: "Nike",
     category: "Running",
   },
@@ -44,7 +44,7 @@ const sampleProducts = [
     description:
       "Familiar but always fresh, the iconic Air Jordan 1 is remastered with premium leather, classic colour blocking and the original Wings logo on the collar.",
     price: "180.00",
-    imageUrl: "https://placehold.co/600x600/png?text=Jordan+1",
+    imageUrl: "/shoes/shoe-5.avif",
     brand: "Jordan",
     category: "Basketball",
   },
@@ -53,7 +53,7 @@ const sampleProducts = [
     description:
       "Styled for the '70s, loved in the '80s, classic in the '90s and ready for the future. Vintage treatment on the midsole and an exposed foam tongue give it that broken-in look.",
     price: "105.00",
-    imageUrl: "https://placehold.co/600x600/png?text=Blazer+Mid",
+    imageUrl: "/shoes/shoe-6.avif",
     brand: "Nike",
     category: "Lifestyle",
   },
