@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Jost } from "next/font/google";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import "./globals.css";
 
 const jost = Jost({
@@ -18,9 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${jost.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-light-100 font-jost text-dark-900">
-        <Navbar />
-        <div className="flex flex-1 flex-col">{children}</div>
-        <Footer />
+        {children}
       </body>
     </html>
   );
