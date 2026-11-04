@@ -1,63 +1,158 @@
 import { config } from "dotenv";
+import type { NewProduct } from "./schema";
 
 config({ path: [".env.local", ".env"] });
 
 const sampleProducts = [
   {
-    name: "Nike Air Force 1 '07",
+    name: "Nike Air Force 1 '07 LV8",
     description:
-      "The radiance lives on in the b-ball original. Crisp leather, bold details and the perfect amount of flash make the Air Force 1 '07 an everyday icon.",
-    price: "110.00",
-    imageUrl: "/shoes/shoe-1.jpg",
-    brand: "Nike",
-    category: "Lifestyle",
-  },
-  {
-    name: "Nike Air Max 90",
-    description:
-      "Nothing as fly, nothing as comfortable, nothing as proven. The Air Max 90 stays true to its OG running roots with the iconic Waffle sole, stitched overlays and visible Max Air cushioning.",
-    price: "130.00",
-    imageUrl: "/shoes/shoe-2.webp",
-    brand: "Nike",
-    category: "Lifestyle",
-  },
-  {
-    name: "Nike Dunk Low Retro",
-    description:
-      "Created for the hardwood but taken to the streets, this '80s basketball icon returns with classic details and throwback hoops flair. Padded, low-cut collar for all-day comfort.",
-    price: "115.00",
+      "The radiance lives on in the b-ball original. Crisp leather, bold details and the perfect amount of flash make the Air Force 1 an everyday icon.",
+    price: "120.00",
     imageUrl: "/shoes/shoe-3.webp",
     brand: "Nike",
     category: "Lifestyle",
+    subtitle: "Men's Shoes",
+    colorCount: 6,
+    badge: "Best Seller",
+    badgeTone: "red",
+  },
+  {
+    name: "Nike Air Max Plus",
+    description:
+      "Let your attitude have the edge in the Air Max Plus, a Tuned Air experience that offers premium stability and unbelievable cushioning.",
+    price: "180.00",
+    imageUrl: "/shoes/shoe-4.webp",
+    brand: "Nike",
+    category: "Lifestyle",
+    subtitle: "Men's Shoes",
+    colorCount: 4,
+    badge: "Extra 20% off",
+    badgeTone: "green",
+  },
+  {
+    name: "Nike Air Max Dn",
+    description:
+      "Dynamic Air unit system with dual-pressure tubes creates a reactive sensation with every step, for a futuristic design that's comfortable enough to wear all day.",
+    price: "160.00",
+    imageUrl: "/shoes/shoe-6.avif",
+    brand: "Nike",
+    category: "Lifestyle",
+    subtitle: "Men's Shoes",
+    colorCount: 3,
+    badge: "Sustainable Materials",
+    badgeTone: "green",
+  },
+  {
+    name: "Nike Air Max Dn SE",
+    description:
+      "The Air Max Dn SE pairs our next-gen Dynamic Air cushioning with special-edition details for a look that stands out on the street.",
+    price: "170.00",
+    imageUrl: "/shoes/shoe-7.avif",
+    brand: "Nike",
+    category: "Lifestyle",
+    subtitle: "Men's Shoes",
+    colorCount: 1,
   },
   {
     name: "Nike Pegasus 41",
     description:
       "Responsive cushioning in the Pegasus provides an energized ride for everyday road running. ReactX foam and Air Zoom units deliver a springy feel mile after mile.",
     price: "140.00",
-    imageUrl: "/shoes/shoe-4.webp",
+    imageUrl: "/shoes/shoe-8.avif",
     brand: "Nike",
     category: "Running",
+    subtitle: "Men's Road Running Shoes",
+    colorCount: 8,
+    badge: "Best Seller",
+    badgeTone: "red",
   },
   {
-    name: "Air Jordan 1 Retro High OG",
+    name: "Sabrina 2",
     description:
-      "Familiar but always fresh, the iconic Air Jordan 1 is remastered with premium leather, classic colour blocking and the original Wings logo on the collar.",
-    price: "180.00",
-    imageUrl: "/shoes/shoe-5.avif",
-    brand: "Jordan",
+      "Sabrina Ionescu's game is all about precision. Her second signature shoe keeps you low to the court with responsive cushioning for quick cuts and pull-ups.",
+    price: "130.00",
+    imageUrl: "/shoes/shoe-9.avif",
+    brand: "Nike",
     category: "Basketball",
+    subtitle: "Basketball Shoes",
+    colorCount: 5,
+    badge: "Extra 10% off",
+    badgeTone: "green",
   },
   {
-    name: "Nike Blazer Mid '77 Vintage",
+    name: "Nike G.T. Cut 3",
     description:
-      "Styled for the '70s, loved in the '80s, classic in the '90s and ready for the future. Vintage treatment on the midsole and an exposed foam tongue give it that broken-in look.",
-    price: "105.00",
-    imageUrl: "/shoes/shoe-6.avif",
+      "Designed to help you create space for stepback jumpers and backdoor cuts, the G.T. Cut 3 delivers explosive energy return in a low-to-the-ground package.",
+    price: "170.00",
+    imageUrl: "/shoes/shoe-10.avif",
+    brand: "Nike",
+    category: "Basketball",
+    subtitle: "Basketball Shoes",
+    colorCount: 4,
+  },
+  {
+    name: "Nike Free Metcon 6",
+    description:
+      "Flexible forefoot meets stable heel. The Free Metcon 6 is built to move with you through sprints, lifts and everything in between.",
+    price: "120.00",
+    imageUrl: "/shoes/shoe-11.avif",
+    brand: "Nike",
+    category: "Training",
+    subtitle: "Women's Workout Shoes",
+    colorCount: 6,
+    badge: "Best Seller",
+    badgeTone: "red",
+  },
+  {
+    name: "Nike Motiva",
+    description:
+      "A rocker-shaped sole and super-soft foam help you roll through each step, making the Motiva a comfortable companion for walks of any length.",
+    price: "115.00",
+    imageUrl: "/shoes/shoe-12.avif",
+    brand: "Nike",
+    category: "Walking",
+    subtitle: "Women's Walking Shoes",
+    colorCount: 3,
+    badge: "Sustainable Materials",
+    badgeTone: "green",
+  },
+  {
+    name: "Nike Field General",
+    description:
+      "Born on the gridiron in the '80s and back for the streets, the Field General brings soft suede and a grippy gum-style outsole to your everyday rotation.",
+    price: "100.00",
+    imageUrl: "/shoes/shoe-13.avif",
     brand: "Nike",
     category: "Lifestyle",
+    subtitle: "Men's Shoes",
+    colorCount: 2,
   },
-];
+  {
+    name: "Nike Zegama 2",
+    description:
+      "Made for steep climbs and technical descents, the Zegama 2 pairs plush ZoomX foam with a lugged outsole for confident footing on the trail.",
+    price: "180.00",
+    imageUrl: "/shoes/shoe-14.avif",
+    brand: "Nike",
+    category: "Running",
+    subtitle: "Women's Trail Running Shoes",
+    colorCount: 4,
+    badge: "Extra 20% off",
+    badgeTone: "green",
+  },
+  {
+    name: "Nike Vomero 18",
+    description:
+      "Our most cushioned Vomero yet. A stacked ZoomX and ReactX midsole delivers a soft, smooth ride for your longest runs.",
+    price: "150.00",
+    imageUrl: "/shoes/shoe-15.avif",
+    brand: "Nike",
+    category: "Running",
+    subtitle: "Men's Road Running Shoes",
+    colorCount: 5,
+  },
+] satisfies NewProduct[];
 
 async function main() {
   const { db } = await import("./index");

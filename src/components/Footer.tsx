@@ -86,25 +86,25 @@ export default function Footer({
 }: FooterProps) {
   return (
     <footer className="bg-dark-900 text-light-100">
-      <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
-          <Link href="/" aria-label="Nike home" className="shrink-0">
+      <div className="w-full px-4 pt-12 sm:px-6 lg:px-12 lg:pt-16">
+        <div className="flex flex-col gap-10 xl:grid xl:grid-cols-[1fr_auto_1fr] xl:items-start">
+          <Link href="/" aria-label="Nike home" className="w-fit shrink-0">
             <Image src="/logo.svg" alt="Nike" width={80} height={29} />
           </Link>
 
           <nav
             aria-label="Footer"
-            className="grid flex-1 grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:max-w-4xl lg:gap-x-8 xl:max-w-5xl"
+            className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4 lg:gap-x-8 xl:grid-cols-[repeat(4,13rem)] xl:gap-x-0 2xl:grid-cols-[repeat(4,14rem)]"
           >
             {columns.map((column) => (
               <div key={column.title}>
-                <h2 className="text-body-medium text-light-100 sm:text-lead">{column.title}</h2>
+                <h2 className="text-body-medium text-light-100 xl:text-lead">{column.title}</h2>
                 <ul className="mt-4 space-y-3 sm:mt-6 sm:space-y-4">
                   {column.links.map((link) => (
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-body text-dark-500 transition-colors hover:text-light-100 sm:text-lead sm:font-normal"
+                        className="text-body text-dark-500 transition-colors hover:text-light-100 xl:text-lead xl:font-normal"
                       >
                         {link.label}
                       </Link>
@@ -115,7 +115,7 @@ export default function Footer({
             ))}
           </nav>
 
-          <ul className="flex items-center gap-4" aria-label="Social media">
+          <ul className="flex items-center gap-4 xl:justify-self-end" aria-label="Social media">
             {socials.map((social) => (
               <li key={social.label}>
                 <Link

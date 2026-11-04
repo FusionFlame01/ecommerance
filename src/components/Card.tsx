@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type BadgeTone = "red" | "green" | "orange";
+export type BadgeTone = "red" | "green" | "orange";
 
 export interface CardBadge {
   label: string;
@@ -61,27 +61,27 @@ export default function Card({
         />
         {badge && (
           <span
-            className={`absolute left-3 top-3 rounded-full bg-light-100 px-3 py-1 text-caption sm:left-4 sm:top-4 sm:px-4 sm:py-1.5 sm:text-body-medium ${badgeToneClasses[badge.tone ?? "red"]}`}
+            className={`absolute left-3 top-3 rounded-full bg-light-100 px-3 py-1 text-caption sm:left-4 sm:top-4 ${badgeToneClasses[badge.tone ?? "red"]}`}
           >
             {badge.label}
           </span>
         )}
       </div>
 
-      <div className="flex flex-1 flex-col gap-1 py-4">
+      <div className="flex flex-1 flex-col px-1 pt-3 pb-1">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="text-body-medium text-dark-900 sm:text-lead">{title}</h3>
+          <h3 className="text-body-medium text-dark-900">{title}</h3>
           {price !== undefined && (
-            <p className="shrink-0 text-body-medium text-dark-900 sm:text-lead">
+            <p className="shrink-0 text-body-medium text-dark-900">
               {formatPrice(price, currency)}
             </p>
           )}
         </div>
         {description && (
-          <p className="text-body text-dark-700 sm:text-lead sm:font-normal">{description}</p>
+          <p className="mt-1 text-body text-dark-700">{description}</p>
         )}
         {metaItems.map((item) => (
-          <p key={item} className="text-body text-dark-700 sm:text-lead sm:font-normal">
+          <p key={item} className="text-body text-dark-700">
             {item}
           </p>
         ))}
