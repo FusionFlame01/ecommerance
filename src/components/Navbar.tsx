@@ -32,13 +32,13 @@ export default function Navbar({ links = defaultLinks }: NavbarProps) {
     <header className="sticky top-0 z-50 bg-light-100">
       <nav
         aria-label="Primary"
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-20 lg:px-8"
+        className="flex h-16 w-full items-center justify-between px-4 sm:px-6 lg:grid lg:h-20 lg:grid-cols-[1fr_auto_1fr] lg:px-12"
       >
-        <Link href="/" aria-label="Nike home" className="flex items-center">
+        <Link href="/" aria-label="Nike home" className="flex w-fit items-center">
           <Image src="/logo.svg" alt="Nike" width={36} height={13} priority className="invert" />
         </Link>
 
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -51,7 +51,7 @@ export default function Navbar({ links = defaultLinks }: NavbarProps) {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-6 justify-self-end lg:flex">
           <button
             type="button"
             className="text-body-medium text-dark-900 transition-colors hover:text-dark-700"

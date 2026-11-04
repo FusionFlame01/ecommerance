@@ -1,6 +1,7 @@
 import {
   boolean,
   index,
+  integer,
   numeric,
   pgTable,
   text,
@@ -16,6 +17,10 @@ export const products = pgTable("products", {
   imageUrl: text("image_url").notNull(),
   brand: text("brand").notNull(),
   category: text("category").notNull(),
+  subtitle: text("subtitle"),
+  colorCount: integer("color_count"),
+  badge: text("badge"),
+  badgeTone: text("badge_tone").$type<"red" | "green" | "orange">(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 

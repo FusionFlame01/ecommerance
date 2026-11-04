@@ -51,14 +51,26 @@ export default async function Home() {
   ];
 
   return (
-    <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-10 sm:px-6 lg:px-8">
-      <header className="mb-8">
-        <h1 className="text-heading-3 text-dark-900">Shop Sneakers</h1>
-        <p className="mt-2 text-body text-dark-700">
-          {items.length > 0
-            ? `${items.length} product${items.length === 1 ? "" : "s"}`
-            : "Browse our latest collection"}
-        </p>
+    <main className="w-full flex-1 px-4 pt-6 pb-16 sm:px-6 lg:px-12 lg:pt-8">
+      <header className="mb-6 flex items-center justify-between gap-4 lg:mb-8">
+        <h1 className="text-heading-3 text-dark-900">
+          New{items.length > 0 && ` (${items.length})`}
+        </h1>
+        <button
+          type="button"
+          className="flex items-center gap-2 text-body-medium text-dark-900 transition-colors hover:text-dark-700"
+        >
+          Sort By
+          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none">
+            <path
+              d="m6 9 6 6 6-6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
       </header>
 
       <section className="mb-12">
@@ -85,15 +97,24 @@ export default async function Home() {
           message="Run `npm run seed` to add some sample products."
         />
       ) : (
-        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <ul className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-6 lg:gap-y-10 xl:grid-cols-4">
           {items.map((product) => (
             <li key={product.id}>
               <Card
                 title={product.name}
-                description={product.category}
-                meta={product.brand}
+                description={product.subtitle ?? product.category}
+                meta={
+                  product.colorCount
+                    ? `${product.colorCount} Colour${product.colorCount === 1 ? "" : "s"}`
+                    : product.brand
+                }
                 imageSrc={product.imageUrl}
                 price={product.price}
+                badge={
+                  product.badge
+                    ? { label: product.badge, tone: product.badgeTone ?? undefined }
+                    : undefined
+                }
               />
             </li>
           ))}
